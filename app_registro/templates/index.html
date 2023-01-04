@@ -1,63 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingresos-Gastos:listas</title>
-  </head>
-  <style>
-    table,
-    th,
-    td {
-      border: 2px solid black;
-    }
+{% extends "base.html" %} {% block mainContent %}
+<h1>Lista de Ingresos y Gastos</h1>
+<p>Simulacro de contabilidad</p>
 
-    table {
-      width: 100%;
-    }
-  </style>
-  <body>
-    <header>
-      <h1>Aplicación Flask</h1>
-    </header>
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Concepto</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in lista %} {#Se remplazan las variables por los valores
+    declarados en routes#}
+    <tr>
+      <td>{{item.fecha}}</td>
+      <td>{{item.concepto}}</td>
+      <td>€{{item.cantidad}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
-    <section>
-      <h1>Lista de Ingresos y Gastos</h1>
-      <p>Simulacro de contabilidad</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Concepto</th>
-            <th>Cantidad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>18/12/2022</td>
-            <td>Regalo de Reyes</td>
-            <td>-275,50€</td>
-          </tr>
-          <tr>
-            <td>19/12/2022</td>
-            <td>Cobro de trabajo</td>
-            <td>1200€</td>
-          </tr>
-          <tr>
-            <td>20/12/2022</td>
-            <td>Ropa de Navidad</td>
-            <td>-150.50€</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <a href="/new">Nuevo registro</a>
-    </section>
-
-    <footer>
-      <p>Todos los derechos reservados</p>
-    </footer>
-  </body>
-</html>
+<a href="/new">Nuevo registro</a>
+{% endblock %}

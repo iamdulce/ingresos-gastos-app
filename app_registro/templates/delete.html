@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block mainContent %}
+<h1>Borrar datos</h1>
+
+<form action="">
+  <label for="fecha">Fecha</label>
+  <input type="text" name="text" placeholder="Ingrese fecha" />
+  <br />
+  <label for="concepto">Concepto</label>
+  <input type="text" name="concepto" placeholder="Ingrese concepto" />
+  <br />
+  <label for="cantidad">Cantidad</label>
+  <input type="number" name="cantidad" placeholder="Ingrese cantidad" />
+  <br />
+  <button onclick="alert('Ya lo guardaste, gracias')">Eliminar</button>
+</form>
+{% endblock %}
