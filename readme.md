@@ -16,29 +16,29 @@ La libreria utilizada: flask https://flask.palletsprojects.com/en/2.2.x/
 
 Para inicializar el servidor:
 
-- Windows: `set FLASK_APP=hello.py`
-- Mac: `export FLASK_APP=hello.py`
+- Windows: `set FLASK_APP=main.py`
+- Mac: `export FLASK_APP=main.py`
 
 ## Comando para ejecutar el servidor
 
 ```
-flask --app hello run
+flask --app main run
 ```
 
 ## Comando para ejecutar el servidor en otro puerto
 
 ```
-flask --app hello -p run 5001
+flask --app main -p run 5001
 ```
 
 ## Actualizar el servidor con cambios en tiempo real
 
 ```
-flask --app hello --debug run
+flask --app main --debug run
 ```
 
 ## Actualizar el servidor con cambios en tiempo real y en otro puerto
 
 ```
-flask --app hello --debug run p 5001
+flask --app main --debug run p 5001
 ```
