@@ -19,6 +19,11 @@ Para inicializar el servidor:
 - Windows: `set FLASK_APP=main.py`
 - Mac: `export FLASK_APP=main.py`
 
+Otra alternativa sería crear el archivo oculto .env y dentro agregar las siguientes lineas:
+
+`FLASK_APP = main.py`
+`FLASK_DEBUG = true`
+
 ## Comando para ejecutar el servidor
 
 ```

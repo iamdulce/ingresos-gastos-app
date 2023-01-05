@@ -26,11 +26,11 @@ def index():
 
 @app.route("/new")
 def create():
-	return render_template("new.html", pageTitle="Alta")
+	return render_template("new.html", pageTitle="Alta", typeAction = "Alta", buttonAction = "Guardar")
 
 @app.route("/update")
 def edit():
-	return render_template("update.html", pageTitle="Modificar")
+	return render_template("update.html", pageTitle="Modificar", typeAction = "Modificación", buttonAction = "Editar")
 
 @app.route("/delete")
 def remove():
