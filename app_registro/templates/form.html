@@ -3,16 +3,21 @@
 <h1>{{typeAction}} de Ingresos/Gastos</h1>
 <p>Simulacro de contabilidad</p>
 
-<form action="">
+<form action="/new" method="post">
   <label for="fecha">Fecha</label>
-  <input type="text" name="text" placeholder="Ingrese fecha" />
+  <input type="date" name="fecha" required />
   <br />
   <label for="concepto">Concepto</label>
-  <input type="text" name="concepto" placeholder="Ingrese concepto" />
+  <input type="text" name="concepto" placeholder="Ingrese concepto" required />
   <br />
   <label for="cantidad">Cantidad</label>
-  <input type="number" name="cantidad" placeholder="Ingrese cantidad" />
+  <input
+    type="number"
+    name="cantidad"
+    placeholder="Ingrese cantidad"
+    required
+  />
   <br />
-  <button onclick="alert('Ya lo guardaste, gracias')">{{buttonAction}}</button>
+  <button type="submit">{{buttonAction}}</button>
 </form>
 {% endblock %}

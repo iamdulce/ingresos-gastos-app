@@ -1,30 +1,21 @@
 from app_registro import app
 from flask import render_template
+import csv
 
 @app.route("/")
 def index():
-	#diccionario de elementos a vista en html
-	datos = [
-		{
-			'fecha': '18/12/2022',
-			'concepto': 'Regalo de Reyes',
-			'cantidad': -275.50
-		},
-		{
-			'fecha': '19/12/2022',
-			'concepto': 'Cobro de trabajo',
-			'cantidad': 1200
-		},
-		{
-			'fecha': '20/12/2022',
-			'concepto': 'Ropa de Navidad',
-			'cantidad': -150.50
-		}
-	]
+	#Se remplaza el diccionario datos por archivos csv
+	fichero = open("data/movimientos.txt", "r") #Llama al archivo
+	csvReader = csv.reader(fichero, delimiter=",", quotechar="'") #accede a cada registro del archivo y le da nuevo formato
+
+	datos = []
+
+	for item in csvReader:
+		datos.append(item) #recorre el obj csvReader y carga cada registro en el array vacío
 
 	return render_template("index.html", pageTitle="Listas", lista=datos)
 
-@app.route("/new")
+@app.route("/new",methods=["POST", "GET"])
 def create():
 	return render_template("new.html", pageTitle="Alta", typeAction = "Alta", buttonAction = "Guardar")
 
