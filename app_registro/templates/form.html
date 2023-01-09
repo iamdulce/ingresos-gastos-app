@@ -5,19 +5,34 @@
 
 <form action="/new" method="post">
   <label for="fecha">Fecha</label>
-  <input type="date" name="date" required />
+  <input type="date" name="date" value="{{dataForm.date}}" required />
   <br />
   <label for="concepto">Concepto</label>
-  <input type="text" name="concept" placeholder="Ingrese concepto" required />
+  <input
+    type="text"
+    name="concept"
+    value="{{dataForm.concept}}"
+    placeholder="Ingrese concepto"
+  />
   <br />
   <label for="cantidad">Cantidad</label>
   <input
     type="number"
     name="quantity"
+    value="{{dataForm.quantity}}"
     placeholder="Ingrese cantidad"
-    required
   />
   <br />
   <button type="submit">{{buttonAction}}</button>
 </form>
+
+<a href="/">Volver</a>
+
+<article>
+  <ul>
+    {% for item in msjError%}
+    <li>{{item}}</li>
+    {% endfor %}
+  </ul>
+</article>
 {% endblock %}
