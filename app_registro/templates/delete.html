@@ -1,1 +1,20 @@
-{% extends "form.html" %}
+{% extends "base.html" %} {%block mainContent%}
+<table>
+  <tr>
+    <td>Fecha:</td>
+    <td>{{registro[1]}}</td>
+  </tr>
+  <tr>
+    <td>Concepto:</td>
+    <td>{{registro[2]}}</td>
+  </tr>
+
+  <tr>
+    <td>Cantidad:</td>
+    <td>{{registro[3]}}</td>
+  </tr>
+</table>
+<form action="/delete/{{registro[0]}}" method="post">
+  <button type="submit">Borrar Registro</button>
+</form>
+{%endblock%}
